@@ -1,17 +1,17 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../util/database");
 
-const UserGroup = sequelize.define("UserGroup", {
+const User = sequelize.define("users", {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    isadmin: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
-    },
+    name: Sequelize.STRING,
+    email: Sequelize.STRING,
+    number: Sequelize.STRING,
+    password: Sequelize.STRING,
 });
 
-module.exports = UserGroup;
+module.exports = User;
